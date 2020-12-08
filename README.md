@@ -8,7 +8,7 @@ git clone -b starter-file https://github.com/kaydc18/css-grid-flexbox.git
 ```
 ## Go through the slides
 
-Click [here] (https://docs.google.com/presentation/d/11hKhg3m0wB87o67gsO5tN0E0pdkgC_co7SDnQ9h7Nds/edit?usp=sharing)
+Click [here](https://docs.google.com/presentation/d/11hKhg3m0wB87o67gsO5tN0E0pdkgC_co7SDnQ9h7Nds/edit?usp=sharing)
 
 ## Build Starter Grid
 
@@ -45,9 +45,9 @@ Now we dictate how many rows and columns we need.
 ```CSS
 #grid-container {
   width: 100%;
-	height: 100vh;
+  height: 100vh;
   display: grid;
-	grid-template-rows: 50px 700px 50px;
+  grid-template-rows: 50px 700px 50px;
   grid-template-columns: repeat(4, 1fr);
 }
 ```
@@ -59,7 +59,7 @@ Now lets create our areas
 ```css
 header {
   grid-row: 1 / 1;
-	grid-column: 1 / 4;
+  grid-column: 1 / 4;
   background-color: red;
 }
 
@@ -76,8 +76,8 @@ menu {
 }
 
 footer {
-	grid-row: 3 / 1;
-	grid-column: 1 / 4;
+  grid-row: 3 / 1;
+  grid-column: 1 / 4;
   background-color: red;
 }
 ```
@@ -119,11 +119,11 @@ Now let’s update our layout!
 ```CSS
 header {
   grid-row: 1 / 1;
-	grid-column: 1 / 4;
+  grid-column: 1 / 4;
   background-color: red;
   display: flex;
-	justify-content: space-between;
-	align-items: center;
+  justify-content: space-between;
+  align-items: center;
 
 }
 
@@ -139,7 +139,7 @@ main {
 menu {
   grid-row: 2 / 1;
   grid-column: 1 / 1;
-  background-color: #green;
+  background-color: green;
   display: inline-flex;
   justify-content: center;
   align-items: stretch;
@@ -147,8 +147,8 @@ menu {
 }
 
 footer {
-	grid-row: 3 / 1;
-	grid-column: 1 / 4;
+  grid-row: 3 / 1;
+  grid-column: 1 / 4;
   background-color: red;
   display: flex;
   justify-content: center;
@@ -220,13 +220,13 @@ Add this to the bottom
 }
 
 .member-img {
-	grid-row: 1 / 4;
-	grid-column: 1 / 3;
+  grid-row: 1 / 4;
+  grid-column: 1 / 3;
 }
 
 .member-info {
-	grid-row: 2 / 2;
-	grid-column: 2 / 3;
+  grid-row: 2 / 2;
+  grid-column: 2 / 3;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
