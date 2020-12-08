@@ -1,0 +1,41 @@
+/* Fonts and content */
+
+.menu {
+  color: white;
+  font-size: 2rem;
+}
+
+.logo {
+  color: white;
+  font: helvetica;
+  font-size: 2rem;
+  text-transform: uppercase;
+  }
+  
+
+.team-member {
+  background-color: green;
+  }
+  
+
+.member-name {
+  font-size: 2rem;
+}
+
+p {
+  color: white;
+  font: Helvetica;
+  font-size: 1rem;
+
+}
+  
+.button {
+  font-size: 1rem;
+  text-transform: uppercase;
+  Background-color: red;
+  Border-radius: 10px;
+  Padding: .5rem 1rem;
+}
+  
+
+/* Enter grid info here */
