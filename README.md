@@ -19,11 +19,9 @@ Add the below to the html file.
 ```HTML
 <div id="grid-container">
   <header>Header</header> 
-    <!-- (header is a direct descendent) -->
   <menu>Sidebar</menu>
   <main>
     <div class="team-member">info</div> 
-    <!-- (team-member is not a direct descendant) -->
   </main>
   <footer>Footer</footer>
 </div>
@@ -150,11 +148,12 @@ main {
 menu {
   grid-row: 2 / 3;
   grid-column: 1 / 2;
-  background-color: green;
+  background-color: #000000;
   display: inline-flex;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 footer {
@@ -261,5 +260,33 @@ Add this to the bottom
   background-color: rgb(0, 0, 0, .85);
   padding: 1rem;
   border-radius: 10px;
+}
+```
+
+## Make it mobile-friendly
+
+So this... doesn't look the best on mobile right now. Lets make it a little bit better by eliminating the sidebar, and increasing the main content size.
+
+add the ability to use media queries to the html head
+```html
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+```css
+@media (max-width: 768px) {
+  main {
+    margin: 0;
+    grid-row: 2 / 3;
+    grid-column: 1 / 6;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  menu {
+   display: none;
+  }
 }
 ```

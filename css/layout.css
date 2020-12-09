@@ -20,7 +20,6 @@ body {
   
 
 .team-member {
-  min-width: 350px;
   border: solid #000000;
   margin: 1rem;
   }
@@ -70,3 +69,7 @@ img {
   
 
 /* Enter grid info here */
+
+
+/* Media queries */
+
