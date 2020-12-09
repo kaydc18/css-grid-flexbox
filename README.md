@@ -250,7 +250,7 @@ Add this to the bottom
 
 .member-info {
   grid-row: 2 / 5;
-  grid-column: 3 / 6;
+  grid-column: 2 / 6;
   background-color: rgb(0, 0, 0, .85);
   color: white;
   padding: .5rem;
