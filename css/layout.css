@@ -21,7 +21,7 @@ body {
 
 .team-member {
   border: solid #000000;
-  margin: 0;
+  margin: 1rem;
   }
   
 
@@ -69,3 +69,7 @@ img {
   
 
 /* Enter grid info here */
+
+
+/* Media queries */
+

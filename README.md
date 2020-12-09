@@ -17,19 +17,17 @@ Let’s create a grid! One of the best cases for Grid is being able to create a 
 Add the below to the html file.
 
 ```HTML
-<div id=”grid-container”>
+<div id="grid-container">
   <header>Header</header> 
-    <!-- (header is a direct descendent) -->
   <menu>Sidebar</menu>
   <main>
-    <div class=”team-list>info</div> 
-    <!-- (team-list is not a direct descendant) -->
+    <div class="team-member">info</div> 
   </main>
   <footer>Footer</footer>
 </div>
 ```
 
-First lets set up a container that will apply the grid. Add to layout.css file.
+First let's set up a container that will apply the grid. Add to layout.css file.
 
 ```CSS
 #grid-container {
@@ -54,7 +52,7 @@ Now we dictate how many rows and columns we need.
 This says our rows are going to be 50px tall, then next row is dependent on the other two, and the last row is 50px. The next section will be a column of 4 all equal sizes. You use repeat to say I want this column to repeat 4 times and have it be 1 fraction of the available space in the container.
 
 
-Now lets create our areas
+Now let's create our areas
 
 ```css
 header {
@@ -105,35 +103,35 @@ Now let’s update our layout!
       </menu>
       <main>
         <div class="team-member">
-          <div class="member-img">
-            <img src="img/benigno-hoyuela-72zsd_fnxYc-unsplash.jpg" />
-          </div>
-          <div class="member-info">
-            <h3>First Last</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut odio nec orci ultrices vulputate. </p>
-            <div class="button">
-              View Work
-            </div>
-          </div>
+          name
         </div>
         <div class="team-member">
           name
-          </div>
+        </div>
+        <div class="team-member">
+          name
+        </div>
+        <div class="team-member">
+          name
+        </div>
+        <div class="team-member">
+          name
+        </div>
       </main>
       <footer>
         <p>footer info</p>
       </footer>
-      </div>
+    </div>
 ```
 ```CSS
 header {
-  grid-row: 1 / 1;
-  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  grid-column: 1 / 6;
   background-color: red;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  padding: 1rem;
 }
 
 main {
@@ -148,18 +146,19 @@ main {
 }
 
 menu {
-  grid-row: 2 / 1;
-  grid-column: 1 / 1;
-  background-color: green;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  background-color: #000000;
   display: inline-flex;
   justify-content: center;
   align-items: stretch;
   flex-wrap: wrap;
+  margin: 0;
 }
 
 footer {
-  grid-row: 3 / 1;
-  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  grid-column: 1 / 6;
   background-color: red;
   display: flex;
   justify-content: center;
@@ -230,7 +229,7 @@ Now what?!
       <footer>
         <p>footer info</p>
       </footer>
-      </div>
+    </div>
 ```
 
 Add this to the bottom
@@ -261,5 +260,33 @@ Add this to the bottom
   background-color: rgb(0, 0, 0, .85);
   padding: 1rem;
   border-radius: 10px;
+}
+```
+
+## Make it mobile-friendly
+
+So this... doesn't look the best on mobile right now. Lets make it a little bit better by eliminating the sidebar, and increasing the main content size.
+
+add the ability to use media queries to the html head
+```html
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+```css
+@media (max-width: 768px) {
+  main {
+    margin: 0;
+    grid-row: 2 / 3;
+    grid-column: 1 / 6;
+    background-color: #eeeeee;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  menu {
+   display: none;
+  }
 }
 ```
