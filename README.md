@@ -265,7 +265,7 @@ Add this to the bottom
 
 ## Make it mobile-friendly
 
-So this... doesn't look the best on mobile right now. Lets make it a little bit better by eliminating the sidebar, and increasing the main content size.
+So this... doesn't look the best on mobile right now. Let's make it a little bit better by eliminating the sidebar, and increasing the main content size.
 
 add the ability to use media queries to the html head
 ```html
