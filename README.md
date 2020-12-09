@@ -57,7 +57,7 @@ Now let's create our areas
 ```css
 header {
   grid-row: 1 / 2;
-  grid-column: 1 / 6;
+  grid-column: 1 / 5;
   background-color: #E02020;
   padding: 1rem;
 }
@@ -65,7 +65,7 @@ header {
 main {
   margin: 0;
   grid-row: 2 / 3;
-  grid-column: 2 / 6;
+  grid-column: 2 / 5;
   background-color: #eeeeee;
 }
 
@@ -78,7 +78,7 @@ menu {
 
 footer {
   grid-row: 3 / 4;
-  grid-column: 1 / 6;
+  grid-column: 1 / 5;
   background-color: #E02020;
 }
 ```
@@ -126,8 +126,8 @@ Now let’s update our layout!
 ```CSS
 header {
   grid-row: 1 / 2;
-  grid-column: 1 / 6;
-  background-color: red;
+  grid-column: 1 / 5;
+  background-color: #E02020;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -137,7 +137,7 @@ header {
 main {
   margin: 0;
   grid-row: 2 / 3;
-  grid-column: 2 / 6;
+  grid-column: 2 / 5;
   background-color: #eeeeee;
   display: flex;
   justify-content: flex-start;
@@ -146,20 +146,19 @@ main {
 }
 
 menu {
+  margin: 0;
   grid-row: 2 / 3;
   grid-column: 1 / 2;
   background-color: #000000;
-  display: inline-flex;
+  display: flex;
   justify-content: center;
-  align-items: stretch;
-  flex-wrap: wrap;
-  margin: 0;
+  align-items: flex-start;
 }
 
 footer {
   grid-row: 3 / 4;
-  grid-column: 1 / 6;
-  background-color: red;
+  grid-column: 1 / 5;
+  background-color: #E02020;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,14 +251,13 @@ Add this to the bottom
 .member-info {
   grid-row: 2 / 5;
   grid-column: 3 / 6;
+  background-color: rgb(0, 0, 0, .85);
+  color: white;
+  padding: .5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
-  color: white;
-  background-color: rgb(0, 0, 0, .85);
-  padding: 1rem;
-  border-radius: 10px;
 }
 ```
 
@@ -274,19 +272,15 @@ add the ability to use media queries to the html head
 
 ```css
 @media (max-width: 768px) {
+
   main {
-    margin: 0;
-    grid-row: 2 / 3;
     grid-column: 1 / 6;
-    background-color: #eeeeee;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
+    justify-content: center;
   }
-  
+
   menu {
-   display: none;
+    display: none;
   }
+
 }
 ```
