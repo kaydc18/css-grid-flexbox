@@ -4,7 +4,7 @@ This was created as a small intro to CSS grid and Flexbox with complex layouts
 
 ## Get Started
 ```
-git clone -b starter-file https://github.com/kaydc18/css-grid-flexbox.git
+git clone https://github.com/kaydc18/css-grid-flexbox.git
 ```
 ## Go through the slides
 
