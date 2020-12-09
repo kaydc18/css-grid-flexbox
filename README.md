@@ -17,19 +17,19 @@ Let’s create a grid! One of the best cases for Grid is being able to create a 
 Add the below to the html file.
 
 ```HTML
-<div id=”grid-container”>
+<div id="grid-container">
   <header>Header</header> 
     <!-- (header is a direct descendent) -->
   <menu>Sidebar</menu>
   <main>
-    <div class=”team-list>info</div> 
-    <!-- (team-list is not a direct descendant) -->
+    <div class="team-member">info</div> 
+    <!-- (team-member is not a direct descendant) -->
   </main>
   <footer>Footer</footer>
 </div>
 ```
 
-First lets set up a container that will apply the grid. Add to layout.css file.
+First let's set up a container that will apply the grid. Add to layout.css file.
 
 ```CSS
 #grid-container {
@@ -54,7 +54,7 @@ Now we dictate how many rows and columns we need.
 This says our rows are going to be 50px tall, then next row is dependent on the other two, and the last row is 50px. The next section will be a column of 4 all equal sizes. You use repeat to say I want this column to repeat 4 times and have it be 1 fraction of the available space in the container.
 
 
-Now lets create our areas
+Now let's create our areas
 
 ```css
 header {
@@ -104,18 +104,6 @@ Now let’s update our layout!
         </ul>
       </menu>
       <main>
-        <div class="team-member">
-          <div class="member-img">
-            <img src="img/benigno-hoyuela-72zsd_fnxYc-unsplash.jpg" />
-          </div>
-          <div class="member-info">
-            <h3>First Last</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut odio nec orci ultrices vulputate. </p>
-            <div class="button">
-              View Work
-            </div>
-          </div>
-        </div>
         <div class="team-member">
           name
           </div>
