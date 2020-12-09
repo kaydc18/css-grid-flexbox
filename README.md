@@ -47,38 +47,41 @@ Now we dictate how many rows and columns we need.
   width: 100%;
   height: 100vh;
   display: grid;
-  grid-template-rows: 50px 700px 50px;
+  grid-template-rows: 50px auto 50px;
   grid-template-columns: repeat(4, 1fr);
 }
 ```
-This says our rows are going to be 50px tall, then next row is 800px, and the last row is 50px. The next section will be a column of 4 all equal sizes. You use repeat to say I want this column to repeat 4 times and have it be 1 fraction of the available space in the container.
+This says our rows are going to be 50px tall, then next row is dependent on the other two, and the last row is 50px. The next section will be a column of 4 all equal sizes. You use repeat to say I want this column to repeat 4 times and have it be 1 fraction of the available space in the container.
 
 
 Now lets create our areas
 
 ```css
 header {
-  grid-row: 1 / 1;
-  grid-column: 1 / 4;
-  background-color: red;
+  grid-row: 1 / 2;
+  grid-column: 1 / 6;
+  background-color: #E02020;
+  padding: 1rem;
 }
 
 main {
-  grid-row: 2 / 1;
-  grid-column: 2 / 3;
+  margin: 0;
+  grid-row: 2 / 3;
+  grid-column: 2 / 6;
   background-color: #eeeeee;
 }
 
 menu {
-  grid-row: 2 / 1;
-  grid-column: 1 / 1;
-  background-color: green;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
+  background-color: #000000;
+  margin: 0;
 }
 
 footer {
-  grid-row: 3 / 1;
-  grid-column: 1 / 4;
-  background-color: red;
+  grid-row: 3 / 4;
+  grid-column: 1 / 6;
+  background-color: #E02020;
 }
 ```
 ## Flexbox
@@ -88,33 +91,39 @@ This is where flexbox can be added!
 Now let’s update our layout!
 
 ```html
-<div id=”grid-container”>
-  <header>
-    <div class=”logo”>SOMELOGO</div>
-    <div class=”menu”>menubutton</div>
-  </header> 
-  <menu>
-    <ul>
-      <li>item 1</li>
-      <li>item 2</li>
-      <li>item 3</li>
-    </ul>
-  </menu>
-  <main>
-    <div class=”team-member”>
-    name
-    </div>
-    <div class=”team-member”>
-    name
-    </div>
-    <div class=”team-member”>
-    name
-    </div>
-  </main>
-  <footer>
-    <p>footer info</p>
-  </footer>
-</div>
+    <div id="grid-container">
+      <header>
+        <div class="logo">SOMELOGO</div>
+        <div class="hamburg-menu"><img src="img/hamburgmenu.png"></div>
+      </header> 
+      <menu>
+        <ul>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+        </ul>
+      </menu>
+      <main>
+        <div class="team-member">
+          <div class="member-img">
+            <img src="img/benigno-hoyuela-72zsd_fnxYc-unsplash.jpg" />
+          </div>
+          <div class="member-info">
+            <h3>First Last</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut odio nec orci ultrices vulputate. </p>
+            <div class="button">
+              View Work
+            </div>
+          </div>
+        </div>
+        <div class="team-member">
+          name
+          </div>
+      </main>
+      <footer>
+        <p>footer info</p>
+      </footer>
+      </div>
 ```
 ```CSS
 header {
@@ -128,12 +137,14 @@ header {
 }
 
 main {
-  grid-row: 2 / 1;
-  grid-column: 2 / 3;
+  margin: 0;
+  grid-row: 2 / 3;
+  grid-column: 2 / 6;
   background-color: #eeeeee;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 menu {
@@ -166,71 +177,89 @@ Now what?!
 
   replace HTML
   ```html
-<div id=”grid-container”>
-  <header>
-    <div class=”logo”>SOMELOGO</div>
-    <div class=”menu”>menubutton</div>
-  </header> 
-  <menu>
-    <ul>
-      <li>item 1</li>
-      <li>item 2</li>
-      <li>item 3</li>
-    </ul>
-  </menu>
-  <main>
-    <div class=”team-member”>
-      <div class="member-img">
-        <img src="img/benigno-hoyuela-72zsd_fnxYc-unsplash.jpg" />
-      </div>
-      <div class="member-info">
-        <h3>First Last</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut odio nec orci ultrices vulputate. </p>
-        <div class="button">
-          View Work
+    <div id="grid-container">
+      <header>
+        <div class="logo">SOMELOGO</div>
+        <div class="hamburg-menu"><img src="img/hamburgmenu.png"></div>
+      </header> 
+      <menu>
+        <ul>
+          <li>item 1</li>
+          <li>item 2</li>
+          <li>item 3</li>
+        </ul>
+      </menu>
+      <main>
+        <div class="team-member">
+          <div class="member-img">
+            <img src="img/benigno-hoyuela-72zsd_fnxYc-unsplash.jpg" />
+          </div>
+          <div class="member-info">
+            <h3>First Last</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut odio nec orci ultrices vulputate. </p>
+            <div class="button">
+              View Work
+            </div>
+          </div>
         </div>
+        <div class="team-member">
+          <div class="member-img">
+            <img src="img/benigno-hoyuela-72zsd_fnxYc-unsplash.jpg" />
+          </div>
+          <div class="member-info">
+            <h3>First Last</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut odio nec orci ultrices vulputate. </p>
+            <div class="button">
+              View Work
+            </div>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="member-img">
+            <img src="img/benigno-hoyuela-72zsd_fnxYc-unsplash.jpg" />
+          </div>
+          <div class="member-info">
+            <h3>First Last</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut odio nec orci ultrices vulputate. </p>
+            <div class="button">
+              View Work
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <p>footer info</p>
+      </footer>
       </div>
-    </div>
-  </main>
-  <footer>
-    <p>footer info</p>
-  </footer>
-</div>
 ```
-replace main section
-```CSS
-main {
-  grid-row: 2 / 1;
-  grid-column: 2 / 3;
-  background-color: #eeeeee;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-```
+
 Add this to the bottom
 
 ```css
 .team-member {
-  width: 200px;
+  margin: 1rem;
+  max-width: 350px;
   display: grid;
-  grid-template-rows: repeat(4, 50px);
+  grid-template-rows: repeat(5, 50px);
   grid-template-columns: repeat(5, 1fr);
   border: none;
 }
 
 .member-img {
-  grid-row: 1 / 4;
+  grid-row: 1 / 6;
   grid-column: 1 / 3;
 }
 
 .member-info {
-  grid-row: 2 / 2;
-  grid-column: 2 / 3;
+  grid-row: 2 / 5;
+  grid-column: 3 / 6;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: stretch;
   color: white;
+  background-color: rgb(0, 0, 0, .85);
+  padding: 1rem;
+  border-radius: 10px;
 }
 ```
