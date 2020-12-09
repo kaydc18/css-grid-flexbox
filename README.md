@@ -106,22 +106,34 @@ Now let’s update our layout!
       <main>
         <div class="team-member">
           name
-          </div>
+        </div>
+        <div class="team-member">
+          name
+        </div>
+        <div class="team-member">
+          name
+        </div>
+        <div class="team-member">
+          name
+        </div>
+        <div class="team-member">
+          name
+        </div>
       </main>
       <footer>
         <p>footer info</p>
       </footer>
-      </div>
+    </div>
 ```
 ```CSS
 header {
-  grid-row: 1 / 1;
-  grid-column: 1 / 4;
+  grid-row: 1 / 2;
+  grid-column: 1 / 6;
   background-color: red;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  padding: 1rem;
 }
 
 main {
@@ -136,8 +148,8 @@ main {
 }
 
 menu {
-  grid-row: 2 / 1;
-  grid-column: 1 / 1;
+  grid-row: 2 / 3;
+  grid-column: 1 / 2;
   background-color: green;
   display: inline-flex;
   justify-content: center;
@@ -146,8 +158,8 @@ menu {
 }
 
 footer {
-  grid-row: 3 / 1;
-  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  grid-column: 1 / 6;
   background-color: red;
   display: flex;
   justify-content: center;
@@ -218,7 +230,7 @@ Now what?!
       <footer>
         <p>footer info</p>
       </footer>
-      </div>
+    </div>
 ```
 
 Add this to the bottom

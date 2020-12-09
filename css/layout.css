@@ -20,8 +20,9 @@ body {
   
 
 .team-member {
+  min-width: 350px;
   border: solid #000000;
-  margin: 0;
+  margin: 1rem;
   }
   
 
